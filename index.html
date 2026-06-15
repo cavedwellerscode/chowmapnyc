@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///Users/shaula/Downloads/chowmapnyc_template%202/fake_forum_post.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHOWMAPNYC — Breaking News Forum Mockup</title>
+  <style>
+    :root{
+      --purple:#8c52ff;
+      --magenta:#f784c5;
+      --ink:#241b3d;
+      --muted:#776f89;
+      --soft:#f6f0ff;
+      --line:#e6dcff;
+      --link:#0f7fc7;
+      --alert:#ff2e66;
+      --cream:#fffaf3;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#f5efff 0%,#fff 42%);
+      line-height:1.45;
+    }
+    a{color:var(--link);text-decoration:none;font-weight:700}
+    .edit-banner{
+      position:sticky;top:0;z-index:20;
+      background:#20113f;color:white;
+      padding:10px 16px;
+      font-size:14px;
+      display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;
+      box-shadow:0 2px 10px rgba(0,0,0,.15);
+    }
+    .edit-banner button{
+      border:0;border-radius:999px;padding:7px 13px;
+      background:var(--magenta);color:#20113f;font-weight:800;cursor:pointer;
+    }
+    .site-header{
+      background:var(--purple);
+      border-bottom:6px solid var(--magenta);
+      padding:26px 20px 20px;
+      text-align:center;
+    }
+    .logo{
+      max-width:760px;width:82%;height:auto;display:block;margin:0 auto;
+    }
+    .nav{
+      background:white;
+      border-bottom:1px solid var(--line);
+      text-align:center;
+      padding:10px 8px;
+      font-size:14px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .nav span{margin:0 10px;color:var(--purple);font-weight:800}
+    .wrap{max-width:1040px;margin:28px auto;padding:0 18px;display:grid;grid-template-columns:minmax(0,720px) 280px;gap:24px}
+    .card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px rgba(72,42,140,.08);overflow:hidden}
+    .post-label{display:inline-block;background:var(--alert);color:white;padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+    .article{padding:24px}
+    h1{font-size:42px;line-height:1.04;margin:0 0 12px;letter-spacing:-.035em}
+    .dek{font-size:19px;color:#594b74;margin:0 0 18px;font-weight:600}
+    .meta{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;margin:18px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .byline b{color:var(--ink)}
+    .hero img,.social-embed img{width:100%;display:block;border-radius:14px;border:1px solid var(--line)}
+    .caption{font-size:13px;color:var(--muted);margin:8px 4px 20px;font-style:italic}
+    .body p{font-size:18px;line-height:1.55;margin:0 0 18px}
+    .article-subhead{font-size:18px;line-height:1.35;margin:26px 0 12px;text-transform:uppercase;letter-spacing:.02em;font-weight:900;color:var(--ink)}
+    .body .drop:first-letter{float:left;font-size:62px;line-height:.82;font-weight:900;color:var(--purple);padding:8px 8px 0 0}
+    .pullquote{border-left:6px solid var(--magenta);background:var(--soft);padding:18px 20px;margin:24px 0;border-radius:0 14px 14px 0;font-size:23px;line-height:1.25;font-weight:900;color:#3a236b}
+    .social-embed{margin:26px 0;background:#fafafa;border:1px solid var(--line);border-radius:16px;padding:12px}
+    .tags{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;font-size:14px;color:var(--muted)}
+    .tag{display:inline-block;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 9px;margin:4px;color:var(--purple);font-weight:800}
+    .comments{margin-top:20px;padding:20px 24px;background:var(--cream);border-top:1px solid var(--line)}
+    .comments h2{font-size:22px;margin:0 0 14px}
+    .comment{display:grid;grid-template-columns:54px minmax(0,1fr);gap:12px;border-top:1px solid #eadfff;padding:16px 0}
+    .comment:first-of-type{border-top:0}
+    .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;color:white;font-weight:900}
+    .comment-meta{font-size:14px;color:var(--muted);margin-bottom:4px}.comment-meta b{color:var(--ink)}
+    .comment p{margin:0;font-size:16px}
+    .sidebar{display:flex;flex-direction:column;gap:16px}
+    .sidebox{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(72,42,140,.06)}
+    .sidebox h3{margin:0 0 10px;font-size:17px;color:var(--purple);text-transform:uppercase;letter-spacing:.05em}
+    .sidebox ul{margin:0;padding-left:18px}.sidebox li{margin-bottom:9px;font-size:14px}
+    .footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 15px 50px}
+    [contenteditable="true"]:focus{outline:2px dashed var(--magenta);outline-offset:3px;background:#fff7fc}
+    @media(max-width:850px){.wrap{grid-template-columns:1fr}h1{font-size:34px}.sidebar{display:none}.logo{width:96%}}
+    @media print{
+      @page{size:letter;margin:.55in}
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body{background:white;font-size:10.5pt;line-height:1.32;color:#1f1834}
+      .edit-banner,.sidebar,.nav,.footer{display:none!important}
+      .site-header{padding:12px 0 10px;border-bottom:4px solid var(--magenta);background:var(--purple)}
+      .logo{max-width:430px;width:64%}
+      .wrap{max-width:none;margin:14px 0 0;padding:0;display:block}
+      .card{border:0;border-radius:0;box-shadow:none;overflow:visible;background:white}
+      .article{padding:0}
+      .post-label{font-size:9pt;padding:4px 8px;margin-bottom:8px}
+      h1{font-size:25pt;line-height:1.02;margin:0 0 7px;letter-spacing:-.02em}
+      .dek{font-size:12.5pt;margin:0 0 10px;line-height:1.25;color:#54466d}
+      .meta{font-size:8.8pt;padding:7px 0;margin:10px 0 12px;line-height:1.2}
+      .hero{margin:0 0 8px}
+      .hero img{max-height:3.75in;object-fit:cover;object-position:center;border-radius:8px}
+      .caption{font-size:8.5pt;margin:5px 2px 10px;line-height:1.25}
+      .body p{font-size:11pt;line-height:1.38;margin:0 0 9px}
+      .article-subhead{font-size:11pt;line-height:1.25;margin:12px 0 6px;text-transform:uppercase;font-weight:900}
+      .body .drop:first-letter{float:left;font-size:34pt;line-height:.8;font-weight:900;color:var(--purple);padding:5px 6px 0 0}
+      .pullquote{font-size:14pt;line-height:1.18;margin:12px 0;padding:10px 12px;border-left:4px solid var(--magenta);border-radius:0 8px 8px 0;break-inside:avoid;page-break-inside:avoid}
+      .social-embed{margin:12px auto 9px;padding:7px;border-radius:8px;break-inside:avoid;page-break-inside:avoid;max-width:4.75in;background:white}
+      .social-embed img{border-radius:6px;max-height:5.15in;object-fit:contain}
+      .tags{font-size:8.8pt;margin-top:12px;padding-top:8px}
+      .tag{padding:3px 6px;margin:2px}
+      .comments{margin-top:12px;padding:12px 0;background:white;border-top:1px solid var(--line);break-before:auto}
+      .comments h2{font-size:14pt;margin:0 0 6px}
+      .comment{grid-template-columns:34px minmax(0,1fr);gap:8px;padding:8px 0;break-inside:avoid;page-break-inside:avoid}
+      .avatar{width:30px;height:30px;font-size:9pt}
+      .comment-meta{font-size:8.8pt;margin-bottom:2px}
+      .comment p{font-size:9.5pt;line-height:1.3}
+      a{color:#0c67a1}
+    }
+  </style>
+</head>
+<body>
+  <div class="edit-banner">
+    <span><b>Editing tip:</b> click “Make Page Editable,” change text directly, then screenshot. Refreshing resets unsaved edits.</span>
+    <button onclick="toggleEdit()">Turn Editing Off</button>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <header class="site-header">
+    <img class="logo" src="assets/logo.png" alt="CHOWMAPNYC">
+  </header>
+  <nav class="nav"><span>Breaking News</span><span>Dining Out</span><span>Eating In</span><span>Spicy Rumors</span><span>The Chowmap 100</span></nav>
+
+  <main class="wrap">
+    <article class="card">
+      <div class="article">
+        <div class="post-label" contenteditable="true">🚨 Breaking News</div>
+        <h1 contenteditable="true">Celebrity Chef Griff Gumbell Dies in Front of Live Studio Audience</h1>
+        <p class="dek" contenteditable="true">Chowmap exclusive! Fire, blood, panic erupt as star-studded "World Eaters" event turns deadly in San Francisco.</p>
+        <div class="meta">
+          <div class="byline" contenteditable="true">Posted by <b>Chowmap Staff</b> in <a href="#">Food Media Meltdown</a></div>
+          <div contenteditable="true">November 14, 2019 · 12:56 a.m. · 146 replies</div>
+        </div>
+
+        <figure class="hero">
+          <img src="assets/breaking-news.png" alt="Breaking news image">
+          <figcaption class="caption" contenteditable="true"><span style="font-style: normal;">A grisly crime scene from Griff Gumbell's event at S.F.'s Golden Lyceum Theatre. On-location photo of first responders courtesy Alden Finch. Gumbell headshot (inset) ©Codman Press.</span></figcaption>
+        </figure>
+
+        <section class="body">
+          <p class="drop" contenteditable="true">Polarizing food media mogul <b>Griff Gumbell</b>—founder of both <i>The Clever Kitchen</i> and <i>World Eaters</i>—has died after a shocking incident during a gala event in San Francisco, Chowmap has learned. He was 70.</p>
+
+          <p contenteditable="true">Gumbell’s longtime publicist, Libby Winslow, announced the tragic news early this morning via prepared statement. According to sources close to the family, Gumbell was found unresponsive onstage at S.F.'s Golden Lyceum Theatre during a live-streamed anniversary special. Emergency personnel pronounced him dead on the scene.</p>
+
+          <p contenteditable="true">A fire also broke out during the event, but it’s reported that firefighters were able to get the blaze under control quickly. It is not known what role the fire played in Gumbell’s death. Despite the chaos of the event, with several attendees seeking medical treatment for smoke inhalation and minor injuries, no other casualties have been reported.</p>
+
+          <p contenteditable="true">What caused Gumbell’s death is still unclear. He appears to have collapsed during a cooking segment.</p>
+
+          <div class="pullquote" contenteditable="true">"It smelled like kālua pork, but also a touch like death. I don't think I can ever eat barbecue again."</div>
+
+          <p contenteditable="true">Witnesses at the venue describe a scene of total pandemonium. Videos and other posts uploaded to social media from the crime scene offer conflicting reports. Some say the fire started onstage during a demo of <u>his legendary “Not My Mother’s Turkey” recipe</u>. Multiple spectators mentioned sounds of gunfire, while others cite equipment malfunction. Even more troubling reports indicate visible blood splatters on the stage.</p>
+
+          <p contenteditable="true">One alleged attendee <u>took to TikTok</u> to describe the carnage, referencing a strange “sickly-sweet” odor that filled the auditorium. On the "Griff's Gals" Facebook group, <u>Gumbell fan Patricia Crenshaw posted</u>: "It smelled like kālua pork, but also a touch like death. I don't think I can ever eat barbecue again." These alarming firsthand testimonies have set off <u>a wave of online speculation</u> about everything from gas leaks to some kind of chemical attack. Authorities could not be reached for comment to confirm any such theories.</p>
+
+          <h2 class="article-subhead" contenteditable="true">Remembering Griff Gumbell: The Man Who Built the Brand</h2>
+
+          <p contenteditable="true">Gumbell had been a giant in food media for decades. The celebrated chef, publisher, and TV personality famously built his culinary empire from scratch.</p>
+
+          <p contenteditable="true">His meteoric rise began in Newton, Mass., in the 1980s with <i>C’Est Bon</i>, a small gastronomy newsletter Gumbell assembled by hand in his garage with help from his first wife, <b>Margot Halvorsen</b>. (Halvorsen’s own publishing career was brief; today, she is known as a distinguished archaeologist specializing in paleoethnobotany.) Soon after launching <i>C’Est Bon</i>, Gumbell’s refreshingly no-nonsense approach to New American cuisine found its audience—and the company quickly outgrew his suburban garage. This appetite for elevated home cooking eventually spawned <i>The Clever Kitchen</i>, the hugely successful brand that cemented Gumbell as a household name among serious foodies. Over time, his Boston-based empire spanned multiple magazines, television shows, cookbooks, and even specialty cookware—all of it driven by his famously obsessive test kitchen.</p>
+
+          <p contenteditable="true">But Gumbell’s career also came with drama. The year 2013 marked <u>an acrimonious split</u> from both his investors and his second wife, <b>Joanna Carmichael</b> (great-granddaughter of prominent Boston Brahmin investment banker Elias Carmichael), who reportedly held a major financial stake in the business. Soon after this personal and professional breakup, Gumbell married longtime executive assistant <b>Sylvie Gumbell</b> (née Rocca), <u>fueling rumors about a possible workplace affair</u> behind the scenes.</p>
+
+          <p contenteditable="true">In 2017, Griff and Sylvie Gumbell launched <i>World Eaters</i>—a globe-trotting reboot of the old formula and a self-professed labor of love for the newly wed couple. <u>Despite skepticism from fans and investors alike</u>, World Eaters made a splash in its first year by winning a James Beard Award for its in-depth reporting on plov, a meaty rice pilaf that is the national dish of Uzbekistan.</p>
+
+          <p contenteditable="true">But despite that promising start, World Eaters’ future has looked increasingly uncertain. Insiders say the company has been struggling amid <u>growing internal turmoil</u> and hemorrhaging subscribers. For years, it was also dogged by a protracted legal battle with <i>The Clever Kitchen</i>, who sued Gumbell on the basis that his new company directly pilfered <i>TCK</i> intellectual property, though the lawsuit was <u>settled in August 2019</u>, just weeks before the announcement of the live show.</p>
+
+          <h2 class="article-subhead" contenteditable="true">A Career Capstone Ends in Tragedy</h2>
+
+          <p contenteditable="true">“Griff Gumbell: Live from San Francisco!” was positioned as a major brand event—a flashy career retrospective built around Gumbell’s legacy, complete with a star-studded guest list.</p>
+
+          <p contenteditable="true">Cameos included <b>Nigella Lawson</b>, <b>Marcus Samuelsson</b>, and <b>Dave Portnoy</b>. (Before the night turned deadly, attendees say one of the weirder moments involved Portnoy force-feeding Gumbell a slice of Hawaiian pizza onstage while screaming “You know the rules!”)</p>
+
+          <p contenteditable="true">The event even featured a surprise appearance by <b>Sheba Foxley</b>, often referred to as “Connecticut’s Grande Dame of Tasteful Living” and Gumbell’s longtime media rival. A high point of the evening, Foxley’s unexpected entrance was marked by wild applause from a delighted audience. As Foxley cracked both farm-fresh eggs and raunchy jokes while helping Griff prepare an startlingly purple ube souffle onstage, the two foodie foes appeared to finally have buried the hatchet in <u>their decades-long food fight</u>.</p>
+
+          <p contenteditable="true">Whether this truce would have lasted, we will never know. But Foxley came out in support of Gumbell upon learning of his passing. As firefighters were still extinguishing the blaze, Foxley posted the first celebrity tribute on Instagram:</p>
+
+          <figure class="social-embed">
+            <img src="assets/social-post.png" alt="Embedded social media post">
+            <figcaption class="caption" contenteditable="true">Sheba Foxley takes to Instagram to post the first celebrity tribute to mourn Griff Gumbell's passing.</figcaption>
+          </figure>
+
+          <h2 class="article-subhead" contenteditable="true">What Happens Now?</h2>
+
+          <p contenteditable="true">Authorities have not said whether foul play is suspected in Gumbell’s death, which is subject to ongoing investigation.</p>
+
+          <p contenteditable="true">Gumbell is survived by his wife, Sylvie, 43, and his three children: <b>Zuni Gumbell</b>, 30; <b>Chad Gumbell</b>, 28; and <b>Otto Gumbell</b>, 5.</p>
+
+          <p contenteditable="true">Tributes are already pouring in from fans, celebrity chefs, and the media, expressing shock and conveying their condolences to his family. Among them, this note from publicist Libby Winslow: “Griff was a singular force in food media, and his absence will be deeply felt across the industry. Though his death raises many questions, there is one thing we can be sure of: There will never be another Griff Gumbell. Ever.”</p>
+
+          <p contenteditable="true"><i>This is a developing story. Refresh <u>chowmapnyc.com</u> for updates. Got footage of Dave Portnoy tormenting Griff Gumbell? Email <u>tips@chowmapnyc.com</u>.</i></p>
+        </section>
+
+        <div class="tags">
+          Filed under:
+          <span class="tag" contenteditable="true">Breaking</span><span class="tag" contenteditable="true">San Francisco</span><span class="tag" contenteditable="true">Chef Drama</span><span class="tag" contenteditable="true">Sheba Foxley</span>
+        </div>
+      </div>
+
+      <section class="comments">
+        <h2 contenteditable="true">146 Comments</h2>
+        <div class="comment">
+          <div class="avatar">CM</div>
+          <div><div class="comment-meta" contenteditable="true"><b>pasta_fazool</b>&nbsp;· 3 min ago</div><p contenteditable="true">I am completely devastated. This man was an idol to me. Never made his recipes, but I watched the show religiously.&nbsp;When I was really deep in my depression I used to binge watch his show and it helped keep me company. He was like the fun cranky uncle I never had. I cant believe it, such a terrible loss</p></div>
+        </div>
+        <div class="comment">
+          <div class="avatar">NY</div>
+          <div><div class="comment-meta" contenteditable="true"><b>forkedupinflatiron</b> · 7 min ago</div><p contenteditable="true">Slow news day? Last I checked, this site was called "ChowmapNYC," not "ChowmapEverywhere." Boston chef dies in SF? Not my problem. Get a life, guys.</p></div>
+        </div>
+        <div class="comment">
+          <div class="avatar">86</div>
+          <div><div class="comment-meta" contenteditable="true"><b>table_for_none</b> · 12 min ago</div><p contenteditable="true">hey!!!! that was my tiktok post abt the weird smell! arent u gnna to credit me????</p></div>
+        </div>
+      </section>
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebox">
+        <h3 contenteditable="true">Top POsts</h3>
+        <ul>
+          <li contenteditable="true"><a href="#">TidePodTini? Dumbo bar creates OXI-fresh viral sensation</a></li>
+          <li contenteditable="true"><a href="#">Chowmap Travel: Life-changing bites from La Garrotxa, Spain</a></li>
+          <li contenteditable="true"><a href="#">Hot Take: Yes, there's such a thing as too much bubble tea</a></li>
+        </ul>
+      </div>
+      <div class="sidebox">
+        <h3 contenteditable="true">Latest Updates</h3>
+        <ul>
+          <li contenteditable="true">12:49 a.m. | Griff Gumbell #RIP</li>
+          <li contenteditable="true">6:03 p.m. | Best cronut in Midtown</li>
+          <li contenteditable="true">3:11 p.m. | Guess who's cancelled?</li>
+        </ul>
+      </div>
+      <div class="sidebox">
+        <h3 contenteditable="true">ABOUT CHOWMAP NYC</h3>
+        <p style="font-size:14px;margin:0;color:var(--muted)" contenteditable="true">Zagat? Let's not. Yelp? Yawn. Eater? We hardly know 'er. We're Chowmap NYC—the only trusted digital source for foodies in the know, covering the five boroughs and beyond. And like a good UES diner, we're open 24/7.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer" contenteditable="true"><br></footer>
+
+  <script>
+    let editable = true;
+    function toggleEdit(){
+      editable = !editable;
+      document.querySelectorAll('h1,p,figcaption,.byline,.meta div,.post-label,.tag,h2,h3,li,.comment-meta,.footer,.pullquote').forEach(el => {
+        el.contentEditable = editable;
+      });
+      document.querySelector('.edit-banner button').textContent = editable ? 'Turn Editing Off' : 'Make Page Editable';
+    }
+  </script>
+
+
+</body></html>
